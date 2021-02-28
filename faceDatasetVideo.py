@@ -1,3 +1,7 @@
+## OpenCV Implementation of Face Recognizer
+## faceDatasetVideo.py
+## Python file to create dataset of individual person/face from Live Video Camera
+
 import cv2
 import os
 cam = cv2.VideoCapture(0)
@@ -7,7 +11,7 @@ face_detector = cv2.CascadeClassifier('/home/pi/opencv/data/haarcascades/haarcas
 
 # For each person, enter one numeric face id
 face_id = input('\n enter user id end press <return> ==>  ')
-print("\n [INFO] Initializing face capture. Look the camera and wait ...")
+print("\n [**INFO**] Initializing face capture. Look the camera and wait ...")
 # Initialize individual sampling face count
 count = 0
 while(True):
@@ -27,6 +31,6 @@ while(True):
     elif count >= 30: # Take 30 face sample and stop video
          break
 # Do a bit of cleanup
-print("\n [INFO] Exiting Program and cleanup stuff")
+print("\n [**INFO**] Exiting Program and cleanup stuff")
 cam.release()
 cv2.destroyAllWindows()
